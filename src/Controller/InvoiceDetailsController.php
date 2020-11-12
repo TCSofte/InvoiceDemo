@@ -26,7 +26,7 @@ class InvoiceDetailsController extends AbstractController
 
 
     /**
-     * @Route("/Invoice/InvoiceDetails/{id}")
+     * @Route("/Invoice/InvoiceDetails/{id}" , name="InvoiceDetails")
      * 
      */
   

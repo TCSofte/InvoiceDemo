@@ -25,7 +25,7 @@ class InvoiceTypeController extends AbstractController
 
 
     /**
-     * @Route("/Invoice/FormInvoice")
+     * @Route("/Invoice/FormInvoice" , name="FormInvoice")
      */
     public function new(Request $request)
     {

@@ -1,34 +1,56 @@
 {# templates/InvoiceDetails.html.twig #}
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
-<table style="width:100%">
-  
-  <tr>
-    <th>invoice Id  </th>
-    <th>invoice date</th>
-    <th>invoice number</th>
-<th>invoice customerid</th>
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-  </tr>
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<div class="topnav">
+  <a class="active" href="../FormInvoice">Create Invoice</a>
+  <a href="../InvoiceList">InvoiceList</a>
 
+</div>
 
-<tr style="text-align:center">
-    <td>{{ invoice.Id }} </td>
-    <td>{{ invoice.date|date  }}</td>
-    <td>{{ invoice.number }}</td>
-     <td>{{ invoice.customerid }}</td>
-    
+<section>
+  <h1>invoice Resume</h1>
 
-  </tr>
+  <p>invoice Id {{ invoice.Id }}</p>
+  <p>invoice date {{ invoice.date|date  }}</p>
+    <p>invoice number {{ invoice.number  }}</p>
+     <p>invoice customerid {{ invoice.customerid  }}</p>
+</section>
 
-</table>
-
-  <hr>  
+   <hr>  
+<h2>invoice Content</h2>
+ 
 
   <table style="width:100%">
 
-  <tr>
+  <tr style="text-align:center ;outline: thin solid;">
     <th>description </th>
     <th>quantity</th>
     <th>amount</th>
@@ -40,7 +62,7 @@
 
 {% for inv in invoicedet %}
 
- <tr style="text-align:center">
+ <tr style="text-align:center ">
      
     <td>{{ inv.description }} </td>
     <td>{{ inv.quantity }}</td>
@@ -57,7 +79,20 @@
     {% endfor %}
 
 
+ <tr style="text-align:center ;outline: thin solid;">
+     
+    <td></td>
+    <td></td>
+    <td></td>
+
+   <td></td>
+    
+  <td></td>
+    </tr>
+
+
 
 </table>
-<a href="InvoiceList">InvoiceList</a><br>
-<a href="FormInvoice">Create Invoice</a>
+
+
+<a href="../FormInvoiceField/{{ invoice.Id }}">Add Item</a>

@@ -59,7 +59,7 @@ class InvoiceFieldTypeController extends AbstractController
         $entityManager->persist($InvoiceField);
          $entityManager->flush();
 
-        return $this->redirectToRoute('InvoiceList');
+        return $this->redirectToRoute('InvoiceDetails', array('id' => $id));
     }
 
       
