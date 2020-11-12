@@ -1,0 +1,34 @@
+{# templates/InvoiceList.html.twig #}
+
+
+
+<table style="width:100%">
+  
+  <tr>
+    <th>invoice Id  </th>
+    <th>invoice date</th>
+    <th>invoice number</th>
+<th>invoice customerid</th>
+<th>invoice Details</th>
+<th>Add Item</th>
+  </tr>
+
+
+  
+
+{% for invoice in invoices %}
+       
+ <tr style="text-align:center">
+    <td>{{ invoice.Id }} </td>
+    <td>{{ invoice.date|date  }}</td>
+    <td>{{ invoice.number }}</td>
+     <td>{{ invoice.customerid }}</td>
+    <td><a href="InvoiceDetails/{{ invoice.Id }}">Show Details</a></td>
+    
+        <td>  <a href="FormInvoiceField/{{ invoice.Id }}">Add Item</a></td>
+   
+
+  </tr>
+
+       
+    {% endfor %}

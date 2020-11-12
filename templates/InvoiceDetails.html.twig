@@ -1,0 +1,63 @@
+{# templates/InvoiceDetails.html.twig #}
+
+
+<table style="width:100%">
+  
+  <tr>
+    <th>invoice Id  </th>
+    <th>invoice date</th>
+    <th>invoice number</th>
+<th>invoice customerid</th>
+
+
+  </tr>
+
+
+<tr style="text-align:center">
+    <td>{{ invoice.Id }} </td>
+    <td>{{ invoice.date|date  }}</td>
+    <td>{{ invoice.number }}</td>
+     <td>{{ invoice.customerid }}</td>
+    
+
+  </tr>
+
+</table>
+
+  <hr>  
+
+  <table style="width:100%">
+
+  <tr>
+    <th>description </th>
+    <th>quantity</th>
+    <th>amount</th>
+  <th>vatamount</th>
+    <th>totalvat</th>
+
+
+  </tr>
+
+{% for inv in invoicedet %}
+
+ <tr style="text-align:center">
+     
+    <td>{{ inv.description }} </td>
+    <td>{{ inv.quantity }}</td>
+    <td>{{ inv.amount }}</td>
+
+   <td>{{ inv.vatamount }}</td>
+    
+  <td>{{ inv.totalvat }}</td>
+   
+
+  </tr>
+ 
+       
+    {% endfor %}
+
+
+
+</table>
+<a href="InvoiceList">InvoiceList</a><br>
+<a href="FormInvoice">Create Invoice</a>
